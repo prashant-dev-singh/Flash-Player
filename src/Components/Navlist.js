@@ -1,8 +1,10 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
-import Wishlist from "./Wishlist";
+import VideoList from "./VideoList";
+import History from "./History";
 import Playlist from "./Playlist";
+import Videos from "./Videos";
 
 export default function Navlist() {
   return (
@@ -21,15 +23,16 @@ export default function Navlist() {
               </li>
             </li>
             <li>
-              <Link to="/wishlist">WISHLIST</Link>
+              <Link to="/history">HISTORY</Link>
             </li>
           </div>
         </ul>
 
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/wishlist" element={<Wishlist />}></Route>
+          <Route path="/" element={<VideoList />}></Route>
+          <Route path="/history" element={<History />}></Route>
           <Route path="/playlist" element={<Playlist />}></Route>
+          <Route path="/Videos/:vId" element={<Videos />} />
         </Routes>
       </div>
     </>

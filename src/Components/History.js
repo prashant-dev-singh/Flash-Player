@@ -1,6 +1,10 @@
+import { AppContext } from "./VideoContext";
 import React from "react";
+import { useContext } from "react";
 
 export default function History() {
+ // const data = useContext(AppContext);
+  //console.log(data);
   return (
     <>
       <div style={{ margin: "5rem" }}>

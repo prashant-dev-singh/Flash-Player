@@ -2,8 +2,12 @@ import React from "react";
 import Data from "./Data";
 import Videos from "./Videos";
 import { Link } from "react-router-dom";
+import { AppContext } from "./VideoContext";
+import { useContext } from "react";
 
 const VideoList = () => {
+  const { state, dispatch } = useContext(AppContext);
+
   return (
     <>
       <h2>Video List</h2>
@@ -28,7 +32,19 @@ const VideoList = () => {
                   alt=""
                 />{" "}
               </Link>
-              <p>{description}</p>
+              <p>
+                {description}
+                <button
+                  onClick={() =>
+                    dispatch({
+                      type: "ADD_TO_LIKED",
+                      id: id,
+                    })
+                  }
+                >
+                  Like
+                </button>
+              </p>
             </div>
           </>
         );

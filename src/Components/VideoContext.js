@@ -34,9 +34,7 @@ const appReducer = (state, action) => {
     case "ADD_TO_HISTORY":
       return {
         ...state,
-        historyList: historyList.map((item) =>
-          item.id === action.id ? { ...item, qty: item.qty + 1 } : item
-        ),
+        historyList: historyList.concat({ id: action.id }),
       };
     default:
       return state;

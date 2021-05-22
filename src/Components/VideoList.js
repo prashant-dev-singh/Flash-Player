@@ -30,7 +30,10 @@ const VideoList = () => {
                 <img
                   src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
                   alt=""
-                />{" "}
+                  onClick={() => {
+                    dispatch({ type: "ADD_TO_HISTORY", id: id });
+                  }}
+                />
               </Link>
               <p>
                 {description}
